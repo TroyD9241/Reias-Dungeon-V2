@@ -1,3 +1,4 @@
+from app.models import comment
 import os
 from flask import Flask, render_template, request, session, redirect
 from flask_cors import CORS
@@ -9,6 +10,8 @@ from .models import db, User
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.post_routes import post_routes
+from .api.likes_routes import like_routes
+from .api.comments_routes import comment_routes
 
 from .seeds import seed_commands
 
@@ -33,6 +36,8 @@ app.config.from_object(Config)
 app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(post_routes, url_prefix='/api/posts')
+app.register_blueprint(like_routes, url_prefix='/api/likes')
+app.register_blueprint(comment_routes, url_prefix='/api/comments')
 db.init_app(app)
 Migrate(app, db)
 

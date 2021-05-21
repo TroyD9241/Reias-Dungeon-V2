@@ -1,0 +1,64 @@
+.navbar-container {
+    background-color:#06070d;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    left:0;
+    top:0;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    height: 54px;
+    box-shadow:rgba(0, 0, 0, .5) 0px 2px 4px;
+}
+
+.home-shell {
+    position: fixed;
+    top: 54px;
+    background-color: red;
+    width: 100vw;
+    left: 0;
+    display: flex;
+    align-content: center;
+    height: 72px;
+
+}
+
+.left-side {
+    display: flex;
+    align-content: center;
+    width: 45%;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.banner {
+    display: flex;
+    align-content: center;
+    height: -moz-fit-content;
+    height: fit-content;
+    align-self: center;
+}
+
+.banner-deviations {
+    display: flex;
+    align-content: center;
+    height: -moz-fit-content;
+    height: fit-content;
+    align-self: center;
+}
+
+.right-side {
+    width: 50%;
+    margin-left: 5%;
+    height: 100%;
+
+}
+
+
+.banner-posts {
+    display: flex;
+    align-content: center;
+    height: -moz-fit-content;
+    height: fit-content;
+}
