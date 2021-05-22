@@ -23,6 +23,9 @@ def seed_posts():
     fushigura = Post(title='Fushigura Card', body_content='Part 1 of a series',
                      user_id=5
                      )
+    jujutsu = Post(title='Day Off', body_content='The team ;(',
+                   user_id=5
+                   )
     miwa = Post(title='Miwa', body_content='Im not a meme',
                 user_id=5
                 )
@@ -44,6 +47,7 @@ def seed_posts():
     db.session.add(kingdom)
     db.session.add(ishitar)
     db.session.add(nero)
+    db.session.add(jujutsu)
     db.session.commit()
 
 

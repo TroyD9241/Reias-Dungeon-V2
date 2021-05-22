@@ -6,7 +6,7 @@ from .db import db
 class Photo(db.Model):
     __tablename__ = 'photos'
     id = db.Column(db.Integer, primary_key=True)
-    media_url = db.Column(db.String(255), nullable=False)
+    media_url = db.Column(db.String(5000), nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey(
         'posts.id'), nullable=False)
 
