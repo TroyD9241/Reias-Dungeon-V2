@@ -15,7 +15,7 @@
 .home-shell {
     position: fixed;
     top: 54px;
-    background-color: red;
+    background-color: hsl(213,17%,10%);
     width: 100vw;
     left: 0;
     display: flex;
@@ -38,6 +38,10 @@
     height: -moz-fit-content;
     height: fit-content;
     align-self: center;
+    font-size: 25px;
+    color: #f2f2f2;
+    font-weight: bold;
+    /* font-family: DEVIOUS; */
 }
 
 .banner-deviations {
@@ -46,6 +50,8 @@
     height: -moz-fit-content;
     height: fit-content;
     align-self: center;
+    font-size: 18px;
+    color: #e4e5e5;
 }
 
 .right-side {
@@ -61,4 +67,11 @@
     align-content: center;
     height: -moz-fit-content;
     height: fit-content;
+    align-self: center;
+    margin-top: 25px;
+    font-size: 18px;
+    color: #e4e5e5;
 }
+
+/* logo
+<i class="fab fa-deviantart"></i> */

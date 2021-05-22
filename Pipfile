@@ -50,6 +50,7 @@ s3transfer = "==0.4.2"
 toml = "==0.10.2"
 urllib3 = "==1.26.4"
 wrapt = "==1.12.1"
+flask-db = "*"
 
 [dev-packages]
 psycopg2-binary = "==2.8.6"

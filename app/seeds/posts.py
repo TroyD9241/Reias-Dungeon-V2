@@ -5,20 +5,45 @@ import datetime
 
 def seed_posts():
 
-    post1 = Post(title='fake', body_content='ohiewgpwea pgwegwehi pgowhgio',
-                 user_id=2
-                 )
-    post2 = Post(title='faker', body_content='ohiewgpwea pgwegwehi pgowhgio',
-                 user_id=2
-                 )
-    post3 = Post(title='fakrerwre', body_content='ohiewgpwea pgwegwehi pgowhgio',
-                 user_id=2
-                 )
+    toga = Post(title='Himeko Toga', body_content='best girl',
+                user_id=2
+                )
+    jiro = Post(title='Kyouka Jiro', body_content='favorite girl',
+                user_id=2
+                )
+    background = Post(title='Castle', body_content='A castle, took me longer than exepcted :(',
+                      user_id=1
+                      )
+    kimetsu = Post(title='Tanjiro & Kanao', body_content='Not all heros wear capes',
+                   user_id=3
+                   )
+    aerith = Post(title='Aerith', body_content='Generations meet',
+                  user_id=1
+                  )
+    fushigura = Post(title='Fushigura Card', body_content='Part 1 of a series',
+                     user_id=5
+                     )
+    miwa = Post(title='Miwa', body_content='Im not a meme',
+                user_id=5
+                )
+    kingdom = Post(title='Hi Shin Unit ', body_content='Squad',
+                   user_id=1
+                   )
+    ishitar = Post(title='Ishitar ', body_content='Rin or Ishitar ?',
+                   user_id=4)
+    nero = Post(title='Nero Claudis', body_content='actually best girl',
+                user_id=4)
 
-    db.session.add(post1)
-    db.session.add(post2)
-    db.session.add(post3)
-
+    db.session.add(toga)
+    db.session.add(jiro)
+    db.session.add(background)
+    db.session.add(kimetsu)
+    db.session.add(aerith)
+    db.session.add(fushigura)
+    db.session.add(miwa)
+    db.session.add(kingdom)
+    db.session.add(ishitar)
+    db.session.add(nero)
     db.session.commit()
 
 

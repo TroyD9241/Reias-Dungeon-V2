@@ -32,7 +32,7 @@ const NavBar = () => {
       </div>
 
       <div className='right-side'>
-      <div className='banner-posts'>Posts</div>
+      <span className='banner-posts'>Posts</span>
       </div>
     </div>
     </>

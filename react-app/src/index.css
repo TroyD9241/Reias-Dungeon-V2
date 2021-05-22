@@ -1,1 +1,6 @@
 /* TODO Add site wide styles */
+
+@font-face {
+    font-family: "DEVIOUS";
+    src: local('DEVIOUS'), url(./fonts/DEVIOUS.woff) format('woff');
+}
