@@ -36,6 +36,12 @@ def seed_posts():
                    user_id=4)
     nero = Post(title='Nero Claudis', body_content='actually best girl',
                 user_id=4)
+    lelouch = Post(title='I command you',
+                   body_content="You cant change the world without getting your hands dirty.",
+                   user_id=1)
+    joker = Post(title='Light & Shadow',
+                 body_content="Joker a.k.a Akira Kurusu the protagonist from Persona5",
+                 user_id=1)
 
     db.session.add(toga)
     db.session.add(jiro)
@@ -48,6 +54,9 @@ def seed_posts():
     db.session.add(ishitar)
     db.session.add(nero)
     db.session.add(jujutsu)
+    db.session.add(lelouch)
+    db.session.add(joker)
+
     db.session.commit()
 
 

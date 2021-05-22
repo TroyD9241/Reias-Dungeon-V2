@@ -31,7 +31,7 @@ class Post(db.Model):
             "body_content": self.body_content,
             "comment_id": self.comment_id,
             "user_id": self.user_id,
-            "photos": {photo.to_dict() for photo in self.photos},
+            "photos": self.photos.to_dict(),
             "number_likes": len(self.post_likes),
             "number_comments": len(self.comments)
         }
