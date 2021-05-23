@@ -1,0 +1,170 @@
+.modal-shell {
+    background-color: black;
+    color: white;
+    display: flex;
+    height: 600px;
+    width: 80vw;
+    margin-top: -10vh;
+    border-radius: 8px;
+    font-family: "deviantRegular";
+    max-width: 857px;
+    outline: none;
+
+}
+
+.modal-outer {
+
+}
+
+.modal-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background:url(../../images/modaIMG.png)
+}
+
+.modal-right {
+    background-color: white;
+    color: black;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-image-shell {
+    width: 100%;
+    padding-left: 15%;
+    padding-top: 5%;
+}
+.modal-logo-image {
+    height: 50px;
+    background-color: rgba(255, 255, 255, .3);
+    border-radius: 8px;
+
+
+}
+
+.modal-large-text {
+    font-size: 36px;
+    width: 75%;
+    font-family: 'deviantBold';
+
+}
+
+.modal-sub-text {
+    width: 75%;
+    font-size: 14px;
+ }
+
+.modal-artist-by {
+    font-size: 11px;
+    width: 75%;
+    padding-bottom: 5%;
+    color: #747278;
+}
+
+.modal-artist-name {
+    color: #f4fbff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.modal-close {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 15%;
+    padding-top: 5%;
+    font-size: 30px;
+
+}
+
+.fa-times {
+    cursor: pointer;
+
+}
+
+.fa-times:hover {
+    color: #05cc47;
+}
+
+.modal-form-header {
+    font-size: 25px;
+    width: 80%;
+    margin-top: -20%;
+    font-family: 'deviantBold';
+}
+
+.modal-form-header-subtext {
+    font-size: 14px;
+    color: #4a485d;
+    font-family: 'deviantReg';
+}
+
+.modal-tos {
+    font-size: 12px;
+    padding-bottom: 5%;
+    color: #a9a7ac;
+    width: 75%;
+}
+
+.login-form-shell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    width: 89%;
+}
+
+.login-errors {
+    background-color: blue;
+    display: none;
+}
+
+.login-form-input {
+    flex-direction: column;
+    width: 90%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.login-form-button {
+    font-family: "deviantBold";
+    background-color: #12ee8f;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 7%;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-top: 10%;
+}
+
+.login-form-label {
+    text-align: start;
+    align-self: flex-start;
+    margin-bottom: 0px;
+    margin-left: 3px;
+    font-family: "deviantReg";
+}
+.login-form-text {
+    width: 100%;
+    height: 30px;
+    border: none;
+    background-color:rgba(152,192,232, .3);
+    border-bottom: 2px solid darkgrey;
+    font-family: "deviantReg";
+    margin-bottom: 10px;
+}
+
+.login-button-shell {
+    width: 90%;
+}

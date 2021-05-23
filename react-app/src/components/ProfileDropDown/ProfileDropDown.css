@@ -1,0 +1,39 @@
+.dropdown-shell {
+    background-color: white;
+    height: 160px;
+    width: 250px;
+    position: fixed;
+    top: 55px;
+    right: 150px;
+    z-index: 2;
+    box-shadow:rgba(0, 0, 0, .5) 0px 2px 4px;
+
+}
+
+.inner-shell {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-link, .dropdown-button {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+    align-self: center;
+    font-size: 18px;
+    font-family: "deviantReg";
+
+}
+
+.dropdown-link:hover, .dropdown-button:hover {
+    background-color:rgba(152,192,232, .3);}

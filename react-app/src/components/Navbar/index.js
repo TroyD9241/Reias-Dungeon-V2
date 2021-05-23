@@ -1,29 +1,46 @@
 import React from 'react';
 import LogoutButton from '../../components/auth/LogoutButton';
 import './Navbar.css'
+import  src from '../../images/maxresdefault.jpg'
+import ProfileDropDown from '../ProfileDropDown'
 
-const NavBar = () => {
+
+const NavBar = ({login, setLogin, signup, setSignup}) => {
+  let profileHover = () => {
+    if (document.querySelector(".dropdown-shell").classList.contains("hidden")) {
+      document.querySelector(".dropdown-shell").classList.remove("hidden")
+    } else {
+      document.querySelector(".dropdown-shell").classList.add("hidden")
+    }
+  }
   return (
     <>
-    <div className='navbar-container'>
+    <ProfileDropDown profileHover={profileHover} login={login} setLogin={setLogin} signup={signup} setSignup={setSignup}/>
 
-      <button className='navbar-button' to="/" exact={true} activeClassName="active">
-        Home
+    <div className='navbar-container'>
+    <div className='navbar-left'>
+
+      <button className='navbar-button' id='home-button' to="/" exact={true} activeClassName="active">
+
+      <img className='logo-image' src={src} alt='logo'></img>
       </button>
 
       <button className='navbar-button' to="/login" exact={true} activeClassName="active">
-        Login
+        Search
+      </button>
+    </div>
+
+      <div className='navbar-right'>
+      <button className='navbar-button' id='logout-button' onMouseEnter={() => profileHover()}>
+        <i class="fas fa-user-alt"></i>
       </button>
 
-      <button className='navbar-button' to="/sign-up" exact={true} activeClassName="active">
-        Sign Up
+      <button className='navbar-button' id="submit-button" to="/login" exact={true} activeClassName="active">
+        SUBMIT
       </button>
+      </div>
 
-      <button className='navbar-button' to="/users" exact={true} activeClassName="active">
-        Users
-      </button>
 
-      <LogoutButton />
     </div>
     <div className='home-shell'>
       <div className='left-side'>
@@ -35,6 +52,7 @@ const NavBar = () => {
       <span className='banner-posts'>Posts</span>
       </div>
     </div>
+
     </>
   );
 }
