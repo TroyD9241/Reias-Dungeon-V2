@@ -1,8 +1,8 @@
-const SET_POST = posts/SET_POST
+const GET_POST = "posts/GET_POST"
 
 
-const setPost = (post) => ({
-    type: SET_POST,
+const getPost = (post) => ({
+    type: GET_POST,
     payload: post
 })
 
@@ -11,22 +11,25 @@ export const getAllPosts = () => async(dispatch) => {
     const response = await fetch('/api/posts')
 
     const postData = await response.json();
-
+    console.log(postData);
     if (postData.errors) {
         return;
     }
-    dispatch(setPost(postData))
+    dispatch(getPost(postData.posts))
 }
 
 
+
 const initialState = {}
-
-
-export default function reducer(state = initialState, action) {
+const postReducer = (state = initialState, action) => {
+    let newState;
     switch (action.type) {
-        case SET_POST:
-            return action.payload ;
+        case GET_POST:
+            newState = Object.assign({}, state, action.payload)
+            return newState;
         default:
             return state;
     }
 }
+
+export default postReducer

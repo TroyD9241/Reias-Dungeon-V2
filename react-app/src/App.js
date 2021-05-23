@@ -8,6 +8,7 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import LoginModal from './components/LoginModal'
 import SignupFormModal from './components/SignupModal'
+import HomePage from './components/HomePage'
 // import { authenticate } from "./services/auth";
 import { authenticate } from "./store/session";
 
@@ -17,8 +18,6 @@ function App() {
   const [loaded, setLoaded] = useState(false);
   const [login, setLogin] = useState(false)
   const [signup, setSignup] = useState(false)
-
-
 
   useEffect(() => {
     (async() => {
@@ -30,13 +29,15 @@ function App() {
   if (!loaded) {
     return null;
   }
-  console.log(login);
   return (
     <BrowserRouter>
     <LoginModal  login={login} setLogin={setLogin}/>
     <SignupFormModal signup={signup} setSignup={setSignup}/>
       <NavBar  login={login} setLogin={setLogin} signup={signup} setSignup={setSignup}/>
       <Switch>
+        <Route path="/" exact={true}>
+          <HomePage/>
+        </Route>
         <Route path="/login" exact={true}>
         </Route>
         <Route path="/sign-up" exact={true}>
@@ -47,9 +48,6 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/users/:userId" exact={true} >
           <User />
-        </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true}>
-          <h1>My Home Page</h1>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
