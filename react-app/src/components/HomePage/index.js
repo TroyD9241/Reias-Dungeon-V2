@@ -25,7 +25,20 @@ const HomePage = () => {
   return (
     <>
       <div className='homepage-outer-shell'>
-      TEST
+      <div className= "homepage-deviations-container">
+        Deviations
+      </div>
+
+
+      <div className="topics">
+        Topics
+      </div>
+      <div className='new-artists'>
+        New Deviants
+      </div>
+      <div className="popular-deviations">
+        Popular Deviations
+      </div>
         </div>
     </>
   );
