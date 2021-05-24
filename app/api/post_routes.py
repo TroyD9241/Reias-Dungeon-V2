@@ -1,27 +1,29 @@
 from flask import Blueprint, jsonify, redirect, request
 from flask_login import login_required, current_user
+from sqlalchemy import log
 from app.models import db, User, Post
 from app.forms import PostForm
 
 post_routes = Blueprint('posts', __name__)
 
 # # Get all posts
-# # localhost:5000/api/post/
+# # localhost:5000/api/posts/
 
 
 @post_routes.route('/')
-@login_required
 def get_posts():
-    posts = Post.query.all()
-    return {"posts": [post.to_dict() for post in posts]}
+    posts = db.session.query(Post, User).join(
+        User, User.id == Post.user_id).all()
+    print('====================', posts)
+    return {"posts": [{'post': post[0].to_dict(), "user": post[1].to_dict()} for post in posts]}
+    # return None
 
 
 # # GET all of a users posts
 # # localhost:5000/api/posts/user/id
 
-
-@post_routes.route('/user/<int:id>')
-@login_required
+#not working
+@post_routes.route('/user/<int:artist_id>')
 def get_all_user_posts(id):
     posts = Post.query.filter_by(user_id=id).all()
 
@@ -33,7 +35,6 @@ def get_all_user_posts(id):
 
 
 @post_routes.route('/<int:id>')
-@login_required
 def get_single_post(id):
     post = Post.query.get(id)
 

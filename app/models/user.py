@@ -10,13 +10,13 @@ class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(50), nullable=False)
+    first_name = db.Column(db.String(50), nullable=True)
     last_name = db.Column(db.String(50), nullable=True)
-    location = db.Column(db.String(75), nullable=False)
+    location = db.Column(db.String(75), nullable=True)
     email = db.Column(db.String(255), nullable=False)
     hashed_password = db.Column(db.String(4000), nullable=False)
-    pen_name = db.Column(db.String(100), nullable=True)
-    profile_picture = db.Column(db.String(200), nullable=False)
+    pen_name = db.Column(db.String(100), nullable=False)
+    profile_picture = db.Column(db.String(200), nullable=True)
 
     posts = db.relationship(
         'Post', backref='user', cascade='all, delete')
@@ -44,7 +44,7 @@ class User(db.Model, UserMixin):
             "id": self.id,
             "first_name": self.first_name,
             "last_name": self.last_name,
-            "location": self.address,
+            "location": self.location,
             "email": self.email,
             "pen_name": self.pen_name,
             "profile_picture": self.profile_picture,

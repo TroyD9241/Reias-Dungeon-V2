@@ -8,7 +8,7 @@
     display: flex;
     align-content: center;
     justify-content: space-between;
-    height: 51px;
+    height: var(--navbarheight);
     box-shadow:rgba(0, 0, 0, .5) 0px 2px 4px;
 }
 
@@ -20,7 +20,7 @@
     left: 0;
     display: flex;
     align-content: center;
-    height: 60px;
+    height: var(--bannerheight);
 
 }
 
@@ -41,8 +41,8 @@
     font-size: 25px;
     color: #f2f2f2;
     font-weight: bold;
-    margin-left: 15%;
-    /* font-family: DEVIOUS; */
+    margin-left: 10%;
+    font-family: 'deviantBold';
 }
 
 .banner-deviations {
@@ -53,6 +53,8 @@
     align-self: center;
     font-size: 18px;
     color: #e4e5e5;
+    font-family: 'deviantReg';
+
 }
 
 .right-side {
@@ -72,6 +74,7 @@
     align-self: center;
     font-size: 18px;
     color: #e4e5e5;
+    font-family: 'deviantReg';
 }
 
 .navbar-button {

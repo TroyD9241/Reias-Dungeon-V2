@@ -21,7 +21,8 @@ class Post(db.Model):
         'PostLike', backref="like_post", cascade="all, delete")
     comments = db.relationship(
         'Comment', backref="post", cascade="all, delete")
-    photos = db.relationship('Photo', backref='post', cascade='all, delete')
+    photos = db.relationship('Photo', backref='post',
+                             uselist=False, cascade='all, delete')
     #listing.photos['gives back an array']
 
     def to_dict(self):
@@ -29,7 +30,6 @@ class Post(db.Model):
             "id": self.id,
             "title": self.title,
             "body_content": self.body_content,
-            "comment_id": self.comment_id,
             "user_id": self.user_id,
             "photos": self.photos.to_dict(),
             "number_likes": len(self.post_likes),

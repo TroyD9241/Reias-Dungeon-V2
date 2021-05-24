@@ -1,0 +1,66 @@
+.tile {
+  background-position: center;
+  background-size: cover;
+}
+
+.hover-effect {
+  background-image: linear-gradient(#00000000 10%, #00000080);
+  width: 100%;
+  font-family: "deviousBold";
+  color: white;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+
+.hover-effect:hover {
+  opacity: 1;
+}
+
+.ellipsis {
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  width: 24px;
+  height: 24px;
+  font-family: "deviousBold";
+  font-size: 11px;
+  background-color: #00000050;
+  color: white;
+  overflow: hidden;
+}
+
+.ellipsis:hover {
+  background-color: #00000095;
+  color: #01aa75;
+}
+.lower {
+  display: flex;
+  flex-direction: column;
+}
+.bottom-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bottom-row img {
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.top-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.userinfo {
+  display: flex;
+}
+
+.penname {
+  font-family: "deviantReg";
+  font-size: 14px;
+}

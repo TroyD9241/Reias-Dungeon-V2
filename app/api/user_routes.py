@@ -41,3 +41,9 @@ def edit_user():
     edit_form = SignupForm()
     edit_form.populate_obj(user)
     return user.to_dict()
+
+# Get five most recent users
+# @user_routes.route('/new')
+# def new_users():
+#     users = User.query.filter(date(desc)blahblah)
+#! need to add datetime to users for this route

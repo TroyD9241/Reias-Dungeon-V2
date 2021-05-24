@@ -14,5 +14,5 @@ class Photo(db.Model):
         return {
             "id": self.id,
             "media_url": self.media_url,
-            "post_id": self.listing_id
+            "post_id": self.post_id
         }
