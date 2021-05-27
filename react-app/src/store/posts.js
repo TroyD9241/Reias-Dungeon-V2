@@ -1,7 +1,13 @@
 const GET_POST = "posts/GET_POST";
 const ADD_POST = "posts/ADD_POST";
+const GET_SINGLE_POST = "posts/GET_SINGLE_POST";
 const REMOVE_POST = "posts/REMOVE_POST";
 const CHANGE_POST = "posts/EDIT_POST";
+
+const getOnePost = (post) => ({
+  type: GET_SINGLE_POST,
+  payload: post,
+});
 
 const getPost = (post) => ({
   type: GET_POST,
@@ -72,7 +78,7 @@ export const getSinglePost = (postId) => async (dispatch) => {
   if (postData.errors) {
     return;
   }
-  dispatch(getPost(postData));
+  dispatch(getOnePost(postData.post));
 };
 
 export const createPost = (image, title, bodyContent) => async (dispatch) => {
@@ -92,6 +98,7 @@ export const createPost = (image, title, bodyContent) => async (dispatch) => {
 
 const initialState = {
   allPosts: null,
+  post: null,
   // post: {
   //   id: 1,
   //   title: "test1",
@@ -112,6 +119,10 @@ const initialState = {
 const postReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
+    case GET_SINGLE_POST:
+      newState = Object.assign({}, state);
+      newState.post = action.payload;
+      return newState;
     case CHANGE_POST:
       newState = Object.assign({}, state);
       newState.allPosts.post = action.payload;

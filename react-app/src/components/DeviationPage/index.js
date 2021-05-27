@@ -11,7 +11,7 @@ const DeviationPage = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   let { postId } = useParams();
-  const post = useSelector((state) => state.posts.post);
+  const post = useSelector((state) => state.posts?.post);
   const [showForm, setShowForm] = useState(false);
   const [title, setTitle] = useState("");
   const [bodyContent, setBodyContent] = useState("");
@@ -20,7 +20,7 @@ const DeviationPage = () => {
 
   // console.log("post======", post);
   useEffect(() => {
-    dispatch(getSinglePost(postId));
+    dispatch(getSinglePost(Number(postId)));
   }, [dispatch]);
 
   const handleDelete = () => {
@@ -32,6 +32,10 @@ const DeviationPage = () => {
     e.preventDefault();
     await dispatch(editPost(postId, title, bodyContent));
   };
+
+  if (!post) {
+    return null;
+  }
   //! undefined on first render, then returns the correct value
   //   const { body_content, photos, number_comments, number_likes, title } = posts;
 
