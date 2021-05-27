@@ -52,7 +52,7 @@ const DeviationForm = () => {
         ></input>
       </div>
       <div className="submit-form-input">
-        <label className="submit-form-label">Photo</label>
+        <label className="submit-form-label">Photo Url</label>
         <input
           type="text"
           name="photo"

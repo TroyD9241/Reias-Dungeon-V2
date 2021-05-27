@@ -11,7 +11,7 @@ const DeviationPage = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   let { postId } = useParams();
-  const post = useSelector((state) => state.posts?.post);
+  const post = useSelector((state) => state.posts.post);
   const [showForm, setShowForm] = useState(false);
   const [title, setTitle] = useState("");
   const [bodyContent, setBodyContent] = useState("");
