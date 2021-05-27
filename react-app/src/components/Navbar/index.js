@@ -1,7 +1,9 @@
 import React from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 import src from "../../images/maxresdefault.jpg";
 import ProfileDropDown from "../ProfileDropDown";
+import DeviationSubmitPage from "../DeviationSubmitPage";
 
 const NavBar = ({ login, setLogin, signup, setSignup }) => {
   let profileHover = () => {
@@ -24,7 +26,9 @@ const NavBar = ({ login, setLogin, signup, setSignup }) => {
       <div className="navbar-container">
         <div className="navbar-left">
           <button className="navbar-button" id="home-button">
-            <img className="logo-image" src={src} alt="logo"></img>
+            <Link to="/">
+              <img className="logo-image" src={src} alt="logo"></img>
+            </Link>
           </button>
 
           <button className="navbar-button">Search</button>
@@ -40,7 +44,7 @@ const NavBar = ({ login, setLogin, signup, setSignup }) => {
           </button>
 
           <button className="navbar-button" id="submit-button">
-            SUBMIT
+            <Link to="/posts/submit">SUBMIT</Link>
           </button>
         </div>
       </div>

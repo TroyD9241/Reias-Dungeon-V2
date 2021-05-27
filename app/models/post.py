@@ -30,7 +30,7 @@ class Post(db.Model):
             "id": self.id,
             "title": self.title,
             "body_content": self.body_content,
-            "user_id": self.user_id,
+            "user_id": self.user.to_dict(),
             "photos": self.photos.to_dict(),
             "number_likes": len(self.post_likes),
             "number_comments": len(self.comments)

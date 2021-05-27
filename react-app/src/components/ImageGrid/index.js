@@ -9,7 +9,7 @@ import { getAllPosts } from "../../store/posts";
 const ImageGrid = () => {
   const dispatch = useDispatch();
   //
-  const posts = useSelector((state) => state.posts);
+  const posts = useSelector((state) => state.posts.allPosts);
 
   useEffect(() => {
     dispatch(getAllPosts());
@@ -18,15 +18,12 @@ const ImageGrid = () => {
   if (!posts) {
     return null;
   }
-
   return (
-    <>
-      <div className="grid-tile">
-        {Object.values(posts).map((post, i) => {
-          return <ImageTile key={i} post={post} />;
-        })}
-      </div>
-    </>
+    <div className="grid">
+      {Object.values(posts)?.map((post, i) => {
+        return <ImageTile key={i} post={post} />;
+      })}
+    </div>
   );
 };
 
