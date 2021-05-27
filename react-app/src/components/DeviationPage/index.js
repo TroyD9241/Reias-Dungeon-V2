@@ -16,9 +16,6 @@ const DeviationPage = () => {
   const [title, setTitle] = useState("");
   const [bodyContent, setBodyContent] = useState("");
 
-  console.log("post=========", post);
-
-  // console.log("post======", post);
   useEffect(() => {
     dispatch(getSinglePost(Number(postId)));
   }, [dispatch]);
@@ -38,8 +35,6 @@ const DeviationPage = () => {
   }
   //! undefined on first render, then returns the correct value
   //   const { body_content, photos, number_comments, number_likes, title } = posts;
-
-  //   console.log(photos);
 
   return (
     <div className="page">

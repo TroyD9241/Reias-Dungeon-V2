@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import src from "../../images/maxresdefault.jpg";
 import ProfileDropDown from "../ProfileDropDown";
-import DeviationSubmitPage from "../DeviationSubmitPage";
 
 const NavBar = ({ login, setLogin, signup, setSignup }) => {
+  const history = useHistory();
+  const [search, setSearch] = useState("");
+
   let profileHover = () => {
     if (document.querySelector(".dropdown-shell").classList.contains("hidden")) {
       document.querySelector(".dropdown-shell").classList.remove("hidden");
@@ -13,6 +15,13 @@ const NavBar = ({ login, setLogin, signup, setSignup }) => {
       document.querySelector(".dropdown-shell").classList.add("hidden");
     }
   };
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    history.push(`/search/${search}`);
+    setSearch("");
+  };
+
   return (
     <>
       <ProfileDropDown
@@ -31,7 +40,13 @@ const NavBar = ({ login, setLogin, signup, setSignup }) => {
             </Link>
           </button>
 
-          <button className="navbar-button">Search</button>
+          <form className="navbar-button" onSubmit={handleSearch}>
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </form>
         </div>
 
         <div className="navbar-right">

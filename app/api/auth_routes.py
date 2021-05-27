@@ -64,7 +64,7 @@ def sign_up():
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         user = User(
-            pen_name=form.data['pen_name'],
+            pen_name=form.data['penname'],
             email=form.data['email'],
             password=form.data['password']
         )

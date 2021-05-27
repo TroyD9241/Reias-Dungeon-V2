@@ -33,7 +33,6 @@ export const getAllPosts = () => async (dispatch) => {
   const response = await fetch("/api/posts/");
 
   const postData = await response.json();
-  console.log("post------", postData);
   if (postData.errors) {
     return;
   }

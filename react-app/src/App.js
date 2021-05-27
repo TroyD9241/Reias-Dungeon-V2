@@ -9,6 +9,7 @@ import SignupFormModal from "./components/SignupModal";
 import HomePage from "./components/HomePage";
 import DeviationPage from "./components/DeviationPage";
 import DeviationSubmitPage from "./components/DeviationSubmitPage";
+import Search from "./components/Search";
 import { authenticate } from "./store/session";
 
 function App() {
@@ -41,6 +42,9 @@ function App() {
         </Route>
         <Route path="/posts/:postId">
           <DeviationPage />
+        </Route>
+        <Route path="/search/:query">
+          <Search />
         </Route>
         <ProtectedRoute path="/users/:userId" exact={true}>
           <User />

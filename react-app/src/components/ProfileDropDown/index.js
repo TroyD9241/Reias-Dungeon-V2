@@ -46,7 +46,7 @@ const ProfileDropDown = ({ profileHover, login, setLogin, signup, setSignup }) =
                 className="dropdown-link"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://github.com/TroyD9241/Reias-Dungeon-/wiki"
+                href="https://github.com/TroyD9241/Reias-Dungeon-V2"
               >
                 Github Repo
               </a>
