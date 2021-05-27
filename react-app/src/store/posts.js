@@ -24,7 +24,7 @@ const removePost = (postId) => ({
 });
 // get all posts
 export const getAllPosts = () => async (dispatch) => {
-  const response = await fetch("/api/posts");
+  const response = await fetch("/api/posts/");
 
   const postData = await response.json();
   console.log("post------", postData);
