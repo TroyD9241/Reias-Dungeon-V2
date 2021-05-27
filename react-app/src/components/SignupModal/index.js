@@ -6,7 +6,6 @@ import src from "../../images/transparentlogo.png";
 Modal.setAppElement(document.getElementById("root"));
 
 const SignupFormModal = ({ signup, setSignup }) => {
-  console.log(signup);
   return (
     <Modal
       isOpen={signup}

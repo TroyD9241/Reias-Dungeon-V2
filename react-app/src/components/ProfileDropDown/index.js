@@ -11,10 +11,10 @@ const ProfileDropDown = ({ profileHover, login, setLogin, signup, setSignup }) =
         <div className="inner-shell">
           {user && (
             <>
+              {" "}
               <button className="dropdown-button">{user.pen_name}</button>
               <LogoutButton />
               <button className="dropdown-button">Linkedin</button>
-
               <a
                 className="dropdown-link"
                 target="_blank"

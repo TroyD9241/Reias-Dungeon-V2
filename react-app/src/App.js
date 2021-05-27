@@ -8,6 +8,7 @@ import LoginModal from "./components/LoginModal";
 import SignupFormModal from "./components/SignupModal";
 import HomePage from "./components/HomePage";
 import DeviationPage from "./components/DeviationPage";
+import DeviationSubmitPage from "./components/DeviationSubmitPage";
 import { authenticate } from "./store/session";
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
       <Switch>
         <Route path="/" exact={true}>
           <HomePage />
+        </Route>
+        <Route path="/posts/submit">
+          <DeviationSubmitPage />
         </Route>
         <Route path="/posts/:postId">
           <DeviationPage />

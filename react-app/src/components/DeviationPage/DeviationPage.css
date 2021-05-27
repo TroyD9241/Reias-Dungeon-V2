@@ -1,2 +1,13 @@
-.deviation-container {
+.page {
+}
+
+.tile {
+  display: flex;
+}
+
+.add-to-favs {
+  font-family: "deviousBold";
+  font-size: 14px;
+  color: blue;
+  margin-left: 50px;
 }

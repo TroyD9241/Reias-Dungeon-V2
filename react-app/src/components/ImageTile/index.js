@@ -5,8 +5,12 @@ import "./ImageTile.css";
 
 const ImageTile = ({ post }) => {
   const history = useHistory();
-  const { post: data, user } = post;
-  const { id, title, number_likes, number_comments, photos } = data;
+  console.log("post====", post);
+  // const { post: data, user } = post;
+  // console.log("data=====", data);
+  // console.log("user====", user);
+  const { id, title, number_likes, number_comments, photos, user } = post;
+  console.log("user-photos----", user, photos);
 
   if (!post) {
     return null;
@@ -34,8 +38,8 @@ const ImageTile = ({ post }) => {
           </div>
           <div className="bottom-row">
             <div className="userinfo">
-              <img src={user.profile_picture} alt="sorry :(" />
-              <p className="penname">{user.pen_name}</p>
+              <img src={user?.profile_picture} alt="sorry :(" />
+              <p className="penname">{user?.pen_name}</p>
             </div>
             <p className="numberof-likes">
               {number_likes} <i className="far fa-star"></i>
