@@ -3,6 +3,18 @@ const ADD_POST = "posts/ADD_POST";
 const GET_SINGLE_POST = "posts/GET_SINGLE_POST";
 const REMOVE_POST = "posts/REMOVE_POST";
 const CHANGE_POST = "posts/EDIT_POST";
+const LIKE_POST = "posts/LIKE_POST";
+const UNLIKE_POST = "posts/UNLIKE_POST";
+
+const likePost = (postId) => ({
+  type: LIKE_POST,
+  payload: postId,
+});
+
+const unlikePost = (postId) => ({
+  type: UNLIKE_POST,
+  payload: postId,
+});
 
 const getOnePost = (post) => ({
   type: GET_SINGLE_POST,
@@ -29,6 +41,21 @@ const removePost = (postId) => ({
   payload: postId,
 });
 // get all posts
+
+export const addLike = (isLiked, postId) => async (dispatch) => {
+  // const response = await fetch('')
+  // console.log(isLiked, postId);
+  if (isLiked) {
+    dispatch(likePost(postId));
+  } else {
+    dispatch(unlikePost(postId));
+  }
+
+  // const data = await response.json()
+
+  // dispatch(likePost(postId));
+};
+
 export const getAllPosts = () => async (dispatch) => {
   const response = await fetch("/api/posts/");
 
@@ -118,6 +145,17 @@ const initialState = {
 const postReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
+    //Never do this again
+    //state.post.number_likes
+    case UNLIKE_POST:
+      newState = { ...state };
+      newState.post.number_likes--;
+      return newState;
+    case LIKE_POST:
+      newState = { ...state };
+      newState.post.number_likes++;
+      return newState;
+    //Never do this again
     case GET_SINGLE_POST:
       newState = Object.assign({}, state);
       newState.post = action.payload;

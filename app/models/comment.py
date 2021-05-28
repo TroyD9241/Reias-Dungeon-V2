@@ -1,6 +1,4 @@
 from .db import db
-from sqlalchemy import Date, DateTime
-import datetime
 
 
 class Comment (db.Model):

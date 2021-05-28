@@ -5,7 +5,7 @@ import "./Comments.css";
 const Comments = () => {
   return (
     <div className="page">
-      <div className="comment-outer-shell"></div>
+      <h1>Comments Component</h1>
     </div>
   );
 };

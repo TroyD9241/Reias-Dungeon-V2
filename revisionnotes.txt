@@ -1,0 +1,41 @@
+Deviations and Posts are different things!
+--add restrictions for forms
+-----Nav--------
+Add demo login
+Navbar add watched artists
+build out search feature
+Change the Search button styling
+Add user page
+------Nav--------
+
+----Home------
+Improve the main page card layout to dynamically render based on the aspect ration
+Get Carousel working on the main page
+    -show most liked posts, some other stuff
+have the banner dynamically render based on the page its on
+Add tags
+
+add Sidebar(hamburger menu)
+--Home
+--users you follow
+--daily deviations
+--topics?(actual posts?)
+--popular/query by most liked/most liked last month/last year
+--groups
+--light/dark mode
+--commissions
+
+
+properly build out submit deviation/post
+Add AWS for image
+Change the design of the edit/delete form
+Change styling for single page
+add Photo metadata to single post page
+
+
+
+
+Super Stretch Goals
+forums
+shop?
+chat

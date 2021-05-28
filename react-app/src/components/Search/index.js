@@ -14,7 +14,7 @@ const Search = () => {
 
   useEffect(() => {
     (async () => await dispatch(searchPost(query)))();
-  }, [dispatch]);
+  }, [dispatch, query]);
 
   const searchResults = useSelector((state) => state.search.results);
   if (!searchResults) {

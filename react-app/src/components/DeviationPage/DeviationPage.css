@@ -15,38 +15,80 @@
   width: 100%;
 }
 
-.fav-comments {
-  display: flex;
-  justify-content: center;
+.post-container {
+  /* border: 1px solid red; */
+  margin-left: 48px;
 }
 
+.post-container > div {
+  margin-top: 24px;
+}
+
+.fav-comments {
+  display: flex;
+}
+
+.favorites-container {
+  margin-right: 32px;
+}
+
+:is(.favorites-container, .collective-likes):hover {
+  color: #00e59b;
+}
 .artist-title {
+  display: flex;
+}
+
+.artist-title > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .pfp {
+  height: 64px;
+  width: 56px;
+  margin-right: 16px;
+}
+.collective-container {
+  display: flex;
+}
+:is(.collective-container, .fav-comments) > div {
+  display: flex;
+}
+
+:is(.collective-container, .fav-comments) > div :first-child {
+  margin-right: 4px;
 }
 
 .collective-likes {
+  margin-right: 16px;
 }
 
-.collective-comments {
+.crud-form > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.collective-container {
+.crud-form {
+  width: 288px;
 }
 
-.submit-form-button {
+.delete-button {
+  margin-right: 16px !important;
+}
+.edit-form-button {
   background-color: #04aa6d;
   color: white;
-  padding: 16px 24px;
-  margin: 16px 0;
+  opacity: 0.5;
   border: none;
   cursor: pointer;
-  width: 99%;
-  opacity: 0.5;
-  border-radius: 32px;
+  border-radius: 16px;
+  padding: 4px 8px;
+  margin: 8px;
 }
 
-.submit-form-button:hover {
+.edit-form-button:hover {
   opacity: 1;
 }

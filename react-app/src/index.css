@@ -23,6 +23,10 @@
   padding-top: calc(var(--navbarheight) + var(--bannerheight));
 }
 
+::selection {
+  background-color: #00e59b;
+}
+
 .hidden {
   display: none;
 }

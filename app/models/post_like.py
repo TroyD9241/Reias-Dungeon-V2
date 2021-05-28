@@ -1,5 +1,4 @@
 from .db import db
-from sqlalchemy import Date, DateTime
 
 
 class PostLike(db.Model):

@@ -2,11 +2,6 @@ from .db import db
 from sqlalchemy import Date, DateTime
 import datetime
 
-# listings have one artist #! done
-# listings have many photos #! done
-# test
-
-
 class Post(db.Model):
     __tablename__ = 'posts'
 
@@ -23,7 +18,6 @@ class Post(db.Model):
         'Comment', backref="post", cascade="all, delete")
     photos = db.relationship('Photo', backref='post',
                              uselist=False, cascade='all, delete')
-    #listing.photos['gives back an array']
 
     def to_dict(self):
         return {

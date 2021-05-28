@@ -1,6 +1,6 @@
-from flask import Blueprint, jsonify, request
-from flask_login import current_user, login_user, logout_user, login_required
-from app.models import db, User, Post
+from flask import Blueprint
+
+from app.models import db, Post
 
 search_routes = Blueprint('search', __name__)
 

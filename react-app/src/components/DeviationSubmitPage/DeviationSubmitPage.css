@@ -22,7 +22,7 @@ input[type="text"]:focus {
   margin: 16px 0;
   border: none;
   cursor: pointer;
-  width: 16%;
+  width: 32%;
   opacity: 0.5;
   border-radius: 32px;
 }

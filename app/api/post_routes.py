@@ -1,9 +1,8 @@
-from mergedeep import merge
+
 from flask import Blueprint, jsonify, redirect, request
 from flask_login import login_required, current_user
-from sqlalchemy import log
-from app.models import db, User, Post, Comment, Photo
-from app.forms import PostForm
+from app.models import db, Post,Photo
+
 
 post_routes = Blueprint('posts', __name__)
 

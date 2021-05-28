@@ -1,4 +1,4 @@
-import React, { useSelector } from "react";
+import React from "react";
 import DeviationForm from "../auth/DeviationForm";
 import "./DeviationSubmitPage.css";
 

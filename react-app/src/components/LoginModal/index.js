@@ -3,7 +3,6 @@ import "./LoginModal.css";
 import Modal from "react-modal";
 import LoginForm from "../auth/LoginForm";
 import src from "../../images/transparentlogo.png";
-// import {ModalBackgroundImage} from '../../images'
 
 Modal.setAppElement(document.getElementById("root"));
 
@@ -19,7 +18,6 @@ const LoginModal = ({ login, setLogin }) => {
       >
         <div className="modal-left">
           <div className="modal-image-shell">
-            {/* <img src={ModalBackgroundImage}></img> */}
             <img className="modal-logo-image" src={src} alt="logo"></img>
           </div>
           <div className="modal-large-text">

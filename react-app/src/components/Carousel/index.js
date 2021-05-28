@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./Carousel.css";
 import { getAllPosts } from "../../store/posts";
 
 const Carousel = () => {
-  const history = useHistory();
   const dispatch = useDispatch();
 
   let images = [];
@@ -23,7 +21,7 @@ const Carousel = () => {
   //     history.push(`/posts/${id}`);
   //   };
 
-  const handleDrag = (e) => e.preventDefault();
+  // const handleDrag = (e) => e.preventDefault();
 
   const postArr = Object.values(posts);
 
