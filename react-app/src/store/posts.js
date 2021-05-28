@@ -166,7 +166,7 @@ const postReducer = (state = initialState, action) => {
       return newState;
     case REMOVE_POST:
       newState = Object.assign({}, state);
-      delete newState.allPosts[action.payload.id];
+      delete newState.allPosts[action.payload];
       return newState;
     case ADD_POST:
       newState = Object.assign({}, state);

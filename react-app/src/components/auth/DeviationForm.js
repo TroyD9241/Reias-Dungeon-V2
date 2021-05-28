@@ -22,9 +22,9 @@ const DeviationForm = () => {
     setBodyContent(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(createPost(image, title, bodyContent));
+    await dispatch(createPost(image, title, bodyContent));
     history.push("/");
   };
 

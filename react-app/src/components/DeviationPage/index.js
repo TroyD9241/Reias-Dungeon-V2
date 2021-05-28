@@ -28,8 +28,8 @@ const DeviationPage = () => {
     dispatch(getSinglePost(Number(postId)));
   }, [dispatch, postId]);
 
-  const handleDelete = () => {
-    dispatch(deletePost(postId));
+  const handleDelete = async () => {
+    await dispatch(deletePost(postId));
     history.push("/");
   };
 
