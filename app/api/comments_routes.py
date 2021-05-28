@@ -27,13 +27,13 @@ def post_comment():
 # # localhost:5000/api/posts/postid/comments/id
 
 
-# @comment_routes.route('/<int:id>/comments/<int:comment_id>', methods=['DELETE'])
-# @login_required
-# def delete_comment():
-#     comment = Comment.query(commentId)
-#     db.session.delete(comment)
-#     db.session.commit()
-#     return redirect('/')
+@comment_routes.route('/<int:id>/comments/<int:comment_id>', methods=['DELETE'])
+@login_required
+def delete_comment():
+    comment = Comment.query(commentId)
+    db.session.delete(comment)
+    db.session.commit()
+    return redirect('/')
 
-# # Delete a like
-# # localhost:5000/api/posts/comments/likeID
+# Delete a like
+# localhost:5000/api/posts/comments/likeID

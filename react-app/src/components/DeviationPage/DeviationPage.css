@@ -1,13 +1,52 @@
 .page {
+  font-family: "deviantBold";
 }
 
-.tile {
+.deviation-container {
   display: flex;
+  justify-content: center;
 }
 
-.add-to-favs {
-  font-family: "deviousBold";
-  font-size: 14px;
-  color: blue;
-  margin-left: 50px;
+.deviation-tile {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50vw;
+  width: 100%;
+}
+
+.fav-comments {
+  display: flex;
+  justify-content: center;
+}
+
+.artist-title {
+}
+
+.pfp {
+}
+
+.collective-likes {
+}
+
+.collective-comments {
+}
+
+.collective-container {
+}
+
+.submit-form-button {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px 24px;
+  margin: 16px 0;
+  border: none;
+  cursor: pointer;
+  width: 99%;
+  opacity: 0.5;
+  border-radius: 32px;
+}
+
+.submit-form-button:hover {
+  opacity: 1;
 }

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-alice-carousel": "^2.5.1",
+    "react-grid-gallery": "^0.5.5"
+  }
+}

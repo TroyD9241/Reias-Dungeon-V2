@@ -11,7 +11,6 @@ import "./Search.css";
 const Search = () => {
   const dispatch = useDispatch();
   const { query } = useParams();
-  console.log(query);
 
   useEffect(() => {
     (async () => await dispatch(searchPost(query)))();
@@ -23,11 +22,13 @@ const Search = () => {
   }
 
   return (
-    <div className="search">
-      <h1>test</h1>
-      {Object.values(searchResults).map((result, i) => {
-        return <ImageTile key={i} post={result} />;
-      })}
+    <div className="page">
+      <h1>Results</h1>
+      <div className="search">
+        {Object.values(searchResults).map((result, i) => {
+          return <ImageTile key={i} post={result} />;
+        })}
+      </div>
     </div>
   );
 };
