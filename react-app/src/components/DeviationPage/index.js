@@ -6,12 +6,18 @@ import { deletePost, editPost } from "../../store/posts";
 import "./DeviationPage.css";
 
 import { getSinglePost } from "../../store/posts";
+import { likePost } from "../../store/session";
 
 const DeviationPage = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   let { postId } = useParams();
+  const user = useSelector((state) => state.posts.post?.user_id);
+  // console.log("user=", user);
+
   const post = useSelector((state) => state.posts.post);
+  const [like, setLiked] = useState(false);
+  const [change, setChange] = useState("");
   const [showForm, setShowForm] = useState(false);
   const [title, setTitle] = useState("");
   const [bodyContent, setBodyContent] = useState("");
@@ -35,33 +41,59 @@ const DeviationPage = () => {
   }
   //! undefined on first render, then returns the correct value
   //   const { body_content, photos, number_comments, number_likes, title } = posts;
-
   return (
     <div className="page">
-      <div
-        className="tile"
-        style={{ backgroundImage: `url(${post?.photos.media_url})` }}
-      ></div>
-      <img src={post?.photos.media_url}></img>
+      <div className="deviation-container">
+        <div
+          className="deviation-tile"
+          style={{ backgroundImage: `url(${post?.photos.media_url})` }}
+        ></div>
+      </div>
+
       <div className="fav-comments">
-        <p className="add-to-favs">
-          Add to Favourites
-          <i className="far fa-star"></i>
-        </p>
-        <p className="comment">
-          Comment
-          <i class="far fa-comment-alt"></i>
-        </p>
+        <div className="favorites-container">
+          <p className="add-to-favs">
+            Add to Favourites
+            <i className="far fa-star"></i>
+          </p>
+        </div>
+        <div className="comments-container">
+          <p className="comment">
+            Comment
+            <i class="far fa-comment-alt"></i>
+          </p>
+        </div>
+        {/* <p>{post[postId]?.num_likes}</p> */}
       </div>
-      <div className="artist-info">
+
+      <div className="artist-title">
         <h1>{post?.title}</h1>
+        <img className="pfp" src={user.profile_picture}></img>
+        <p className="penname">By {user.pen_name}</p>
       </div>
-      <div className="deviation-info">Body</div>
-      <div className="comment-component">Comment Component</div>
-      <button className="delete-button" onClick={handleDelete}>
+      <div className="post-info">
+        <p className="deviation-info">{post?.body_content}</p>
+      </div>
+
+      <div className="collective-container">
+        <div collective-likes>
+          <p>{post.number_likes}</p>
+          <i className="far fa-star"></i>
+        </div>
+        <div className="collective-comments">
+          <p>{post.number_comments}</p>
+          <i class="far fa-comment-alt"></i>
+        </div>
+      </div>
+
+      <div className="post-info">
+        <p className="deviation-info">{post?.body_content}</p>
+      </div>
+
+      <button className="submit-form-button" onClick={handleDelete}>
         Delete Post
       </button>
-      <button className="edit-posts" onClick={() => setShowForm(true)}>
+      <button className="submit-form-button" onClick={() => setShowForm(true)}>
         Edit
       </button>
       {showForm && (
@@ -86,8 +118,12 @@ const DeviationPage = () => {
               className="submit-form-text"
             ></input>
           </div>
-          <button type="submit">Edit Post</button>
-          <button onClick={() => setShowForm(false)}>Cancel</button>
+          <button className="submit-form-button" type="submit">
+            Edit Post
+          </button>
+          <button className="submit-form-button" onClick={() => setShowForm(false)}>
+            Cancel
+          </button>
         </form>
       )}
     </div>

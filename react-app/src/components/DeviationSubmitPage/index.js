@@ -1,11 +1,13 @@
 import React, { useSelector } from "react";
 import DeviationForm from "../auth/DeviationForm";
+import "./DeviationSubmitPage.css";
 
 const DeviationSubmitPage = () => {
   return (
     <div className="page">
-      <h1>TEEEEST</h1>
-      <DeviationForm />
+      <div className="submit-container">
+        <DeviationForm />
+      </div>
     </div>
   );
 };

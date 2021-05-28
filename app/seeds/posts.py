@@ -5,7 +5,7 @@ import datetime
 
 def seed_posts():
 
-    toga = Post(title='Himeko Toga', body_content='best girl',
+    toga = Post(title='Himiko Toga', body_content='best girl',
                 user_id=2
                 )
     jiro = Post(title='Kyouka Jiro', body_content='favorite girl',

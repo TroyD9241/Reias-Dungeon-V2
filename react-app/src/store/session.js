@@ -1,6 +1,7 @@
 // constants
 const SET_USER = "session/SET_USER";
 const REMOVE_USER = "session/REMOVE_USER";
+const LIKE_POST = "session/LIKE_POST";
 
 const setUser = (user) => ({
   type: SET_USER,
@@ -11,7 +12,12 @@ const removeUser = () => ({
   type: REMOVE_USER,
 });
 
+export const likePost = (postId) => ({
+  type: LIKE_POST,
+  payload: postId,
+});
 // thunks
+
 export const authenticate = () => async (dispatch) => {
   const response = await fetch("/api/auth/", {
     headers: {
@@ -78,6 +84,9 @@ const initialState = { user: null };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
+    case LIKE_POST:
+      state.user.likes[action.payload] = action.payload;
+      return { ...state };
     case SET_USER:
       return { user: action.payload };
     case REMOVE_USER:
