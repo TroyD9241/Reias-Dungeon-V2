@@ -6,14 +6,15 @@ import { createPost } from "../../store/posts";
 const DeviationForm = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(null);
   const [title, setTitle] = useState("");
   const [bodyContent, setBodyContent] = useState("");
 
-  const updateImage = (e) => {
-    setImage(e.target.value);
-  };
 
+  const updateImage = (e) => {
+    const file = e.target.files[0];
+    setImage(file);
+  }
   const updateTitle = (e) => {
     setTitle(e.target.value);
   };
@@ -52,14 +53,14 @@ const DeviationForm = () => {
         ></input>
       </div>
       <div className="submit-form-input">
-        <label className="submit-form-label">Photo Url</label>
-        <input
-          type="text"
-          name="photo"
-          onChange={updateImage}
-          value={image}
-          className="submit-form-text"
-        ></input>
+        <div>
+          <label>{`Photo Url `}</label>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={updateImage}
+          ></input>
+        </div>
       </div>
       <button className="submit-form-button" type="submit">
         Submit

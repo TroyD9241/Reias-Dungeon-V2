@@ -50,8 +50,9 @@ PyJWT = "==1.7.1"
 SQLAlchemy = "==1.3.19"
 Werkzeug = "==1.0.1"
 WTForms = "==2.3.3"
-marshmallow = "*"
-mergedeep = "*"
+marshmallow = "==3.12.1"
+mergedeep = "==1.3.4"
+flask-db = "*"
 
 [dev-packages]
 psycopg2-binary = "==2.8.6"

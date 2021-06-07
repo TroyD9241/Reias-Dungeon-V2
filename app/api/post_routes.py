@@ -1,7 +1,8 @@
 
 from flask import Blueprint, jsonify, redirect, request
 from flask_login import login_required, current_user
-from app.models import db, Post,Photo
+from app.models import db, Post, Photo
+from app.forms import PhotoForm
 
 
 post_routes = Blueprint('posts', __name__)

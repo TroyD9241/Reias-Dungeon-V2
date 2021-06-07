@@ -5,6 +5,7 @@ const REMOVE_POST = "posts/REMOVE_POST";
 const CHANGE_POST = "posts/EDIT_POST";
 const LIKE_POST = "posts/LIKE_POST";
 const UNLIKE_POST = "posts/UNLIKE_POST";
+const ADD_PHOTO = 'posts/ADD_PHOTO'
 
 const likePost = (postId) => ({
   type: LIKE_POST,
@@ -40,6 +41,11 @@ const removePost = (postId) => ({
   type: REMOVE_POST,
   payload: postId,
 });
+
+const addPhoto = (photo) => ({
+  type: ADD_PHOTO,
+  payload: photo
+})
 // get all posts
 
 export const addLike = (isLiked, postId) => async (dispatch) => {
@@ -121,6 +127,22 @@ export const createPost = (image, title, bodyContent) => async (dispatch) => {
   }
   return { error: "something went wrong" };
 };
+
+export const addPostPhoto = (image, post_id) => async(dispatch) => {
+  const formData = new FormData();
+  formData.append("image", image)
+  formData.append("post_id", post_id)
+
+  const response = await fetch('/api/photos', {
+    method: "POST",
+    body: formData
+
+  })
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(addPhoto(data))
+  }
+}
 
 const initialState = {
   allPosts: null,
