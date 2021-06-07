@@ -156,6 +156,18 @@
   margin-top: 10%;
 }
 
+.demologin-form-button {
+  font-family: "deviantBold";
+  background-color: #12ee8f;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 2%;
+  padding-left: 8%;
+  padding-right: 8%;
+  margin-top: 20%;
+}
+
 .login-form-label {
   text-align: start;
   align-self: flex-start;

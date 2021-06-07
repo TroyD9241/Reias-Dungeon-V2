@@ -47,7 +47,6 @@ class User(db.Model, UserMixin):
             "pen_name": self.pen_name,
             "profile_picture": self.profile_picture,
             "likes": {like.post_id: like.post_id for like in self.user_post_likes},
-
         }
 
     def full_name(self):
