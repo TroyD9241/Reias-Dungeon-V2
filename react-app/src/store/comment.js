@@ -6,20 +6,19 @@ const addComment = (comment) => ({
 })
 
 
-export const createComment = (post_id, body_content) => async (dispatch) => {
-    const formData = new FormData();
-    formData.append("post_id", post_id)
-    formData.append("body_content", body_content)
+export const createComment = (postId, bodyContent) => async (dispatch) => {
     const response = await fetch("/api/comments/", {
         method: "POST",
-        body: formData,
-    })
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ postId, bodyContent }),
+    });
 
     if (response.ok) {
         const commentData = await response.json();
         dispatch(addComment(commentData));
+        return;
     }
-    return { error: "omg error" }
+    return { error: "something went wrong" };
 };
 
 const initialState = {

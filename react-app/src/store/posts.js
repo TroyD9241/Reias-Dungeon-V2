@@ -128,10 +128,10 @@ export const createPost = (image, title, bodyContent) => async (dispatch) => {
   return { error: "something went wrong" };
 };
 
-export const addPostPhoto = (image, post_id) => async(dispatch) => {
+export const addPostPhoto = (image, postId) => async (dispatch) => {
   const formData = new FormData();
   formData.append("image", image)
-  formData.append("post_id", post_id)
+  formData.append("post_id", postId)
 
   const response = await fetch('/api/photos', {
     method: "POST",

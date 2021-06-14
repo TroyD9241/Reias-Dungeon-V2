@@ -18,6 +18,7 @@ def add_product_photos():
 
     image = request.files["image"]
 
+    print('image==================',image)
     if not allowed_file(image.filename):
         return {"errors": "file type not permitted"}, 400
 

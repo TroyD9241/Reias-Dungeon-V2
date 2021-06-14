@@ -15,8 +15,8 @@ comment_routes = Blueprint('comments', __name__)
 def post_comment():
     new_comment = Comment(
         user_id=current_user.id,
-        post_id=request.json["post_id"],
-        comment_body=request.json['comment_body']
+        post_id=request.json["postId"],
+        comment_body=request.json['bodyContent']
     )
 
     db.session.add(new_comment)

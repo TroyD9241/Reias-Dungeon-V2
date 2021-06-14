@@ -1,10 +1,16 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
 import LogoutButton from "../auth/LogoutButton";
 import "./ProfileDropDown.css";
 
 const ProfileDropDown = ({ profileHover, login, setLogin, signup, setSignup }) => {
+  const history = useHistory();
   const user = useSelector((state) => state.session.user);
+
+
+
+
   return (
     <>
       <div className="dropdown-shell hidden" onMouseLeave={() => profileHover()}>
@@ -12,9 +18,19 @@ const ProfileDropDown = ({ profileHover, login, setLogin, signup, setSignup }) =
           {user && (
             <>
               {" "}
-              <button className="dropdown-button">{user.pen_name}</button>
+              <button className="dropdown-button">{user.pen_name}
+                <Link to={`/users/${user.id}`}>
+                </Link>
+              </button>
               <LogoutButton />
-              <button className="dropdown-button">Linkedin</button>
+              <a
+                className="dropdown-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/troyd41/"
+              >
+                Linkedin
+              </a>
               <a
                 className="dropdown-link"
                 target="_blank"

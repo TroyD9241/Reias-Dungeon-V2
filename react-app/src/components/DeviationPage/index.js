@@ -137,7 +137,9 @@ const DeviationPage = () => {
           </form>
         )}
       </div>
-      <Comments />
+      {sessionUser &&
+        <Comments />
+      }
     </div>
   );
 };

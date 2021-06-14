@@ -15,6 +15,21 @@ const DeviationForm = () => {
     const file = e.target.files[0];
     setImage(file);
   }
+
+  async function uploadImage() {
+    const formData = new FormData();
+    formData.append("image", image);
+    const res = await fetch('/api/users/image/', {
+      method: "PATCH",
+      body: formData,
+    });
+    // if (!res.ok) {
+    //   const data = await res.json();
+    //   setBackendErrors(data.errors);
+    // }
+  }
+
+
   const updateTitle = (e) => {
     setTitle(e.target.value);
   };
@@ -26,6 +41,7 @@ const DeviationForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await dispatch(createPost(image, title, bodyContent));
+    uploadImage()
     history.push("/");
   };
 
