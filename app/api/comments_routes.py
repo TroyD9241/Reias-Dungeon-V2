@@ -9,14 +9,21 @@ comment_routes = Blueprint('comments', __name__)
 # # Create a comment
 # # localhost:5000/api/posts/postid/comments
 
-
 @comment_routes.route('/', methods=['GET', 'POST'])
 @login_required
 def post_comment():
+    current_post_id = request.json['postId']
+    print('currentpost===============',current_post_id)
+    content = request.json['bodyContent']
+    print('content========',content)
+
+    if not content:
+        return {"message": "content required"}, 401
+
     new_comment = Comment(
         user_id=current_user.id,
-        post_id=request.json["postId"],
-        comment_body=request.json['bodyContent']
+        post_id=current_post_id,
+        comment_body=content
     )
 
     db.session.add(new_comment)

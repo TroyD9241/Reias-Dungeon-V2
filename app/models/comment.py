@@ -18,6 +18,5 @@ class Comment (db.Model):
         return {
             "id": self.id,
             "comment_body": self.comment_body,
-            "user_id": self.user_id,
-            "post_id": self.listing_id,
+            "user": self.user.to_dict()
         }

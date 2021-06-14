@@ -4,16 +4,17 @@ import { useParams, useHistory } from "react-router-dom";
 import { deletePost, editPost } from "../../store/posts";
 
 import "./DeviationPage.css";
-import Comments from "../Comments";
+import Comments from "../CommentCard";
 
 import { getSinglePost, addLike } from "../../store/posts";
+import { getAllComments } from "../../store/comment";
 
 const DeviationPage = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   let { postId } = useParams();
   const sessionUser = useSelector((state) => state.session.user);
-  // console.log(sessionUser ? true : false);
+  const comments = useSelector((state) => state.comment.comments?.comment)
   const user = useSelector((state) => state.posts.post?.user_id);
 
   const post = useSelector((state) => state.posts.post);
@@ -26,6 +27,7 @@ const DeviationPage = () => {
 
   useEffect(() => {
     dispatch(getSinglePost(Number(postId)));
+    dispatch(getAllComments(postId))
   }, [dispatch, postId]);
 
   const handleDelete = async () => {
@@ -138,7 +140,7 @@ const DeviationPage = () => {
         )}
       </div>
       {sessionUser &&
-        <Comments />
+        <Comments comments={comments} />
       }
     </div>
   );

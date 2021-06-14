@@ -50,7 +50,6 @@ const addPhoto = (photo) => ({
 
 export const addLike = (isLiked, postId) => async (dispatch) => {
   // const response = await fetch('')
-  // console.log(isLiked, postId);
   if (isLiked) {
     dispatch(likePost(postId));
   } else {

@@ -1,7 +1,7 @@
 
 from flask import Blueprint, jsonify, redirect, request
 from flask_login import login_required, current_user
-from app.models import db, Post, Photo
+from app.models import db, Post, Photo, Comment
 from app.forms import PhotoForm
 
 
@@ -75,7 +75,11 @@ def get_single_post(id):
 
 # # create a new post POST
 # # localhost:5000/api/posts
+@post_routes.route('/<int:id>/comments')
+def get_post_comments(id):
+    comments = Comment.query.filter_by(post_id=id)
 
+    return {"comment": comment.to_dict() for comment in comments}
 
 @post_routes.route('/', methods=['POST'])
 @login_required

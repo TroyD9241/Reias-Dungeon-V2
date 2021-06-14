@@ -1,10 +1,17 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { createComment } from "../../store/comment";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { createComment, getAllComments } from "../../store/comment";
 
 const CommentForm = () => {
     const dispatch = useDispatch();
     const [bodyContent, setBodyContent] = useState("");
+    const post = useSelector((state) => state.posts.post);
+    const postId = post.id
+
+    useEffect(() => {
+        dispatch(getAllComments(postId))
+    }, [dispatch, postId])
+
 
     const updateBodyContent = (e) => {
         setBodyContent(e.target.value);
@@ -12,7 +19,7 @@ const CommentForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await dispatch(createComment(bodyContent));
+        await dispatch(createComment(postId, bodyContent));
     };
 
     //very different form.
@@ -30,7 +37,7 @@ const CommentForm = () => {
             </div>
             <button className="submit-form-button" type="submit">
                 Submit
-        </button>
+            </button>
         </form>
     );
 };

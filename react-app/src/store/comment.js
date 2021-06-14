@@ -1,10 +1,29 @@
 const ADD_COMMENT = 'comments/ADD_COMMENT';
+const GET_COMMENTS = 'comments/GET_COMMENTS';
+
+const getComments = (comments) => ({
+    type: GET_COMMENTS,
+    payload: comments
+})
 
 const addComment = (comment) => ({
     type: ADD_COMMENT,
     payload: comment
 })
 
+export const getAllComments = (postId) => async (dispatch) => {
+    const response = await fetch(`/api/posts/${postId}/comments`)
+
+    const comments = await response.json();
+    console.log(comments);
+
+    if (comments.errors) {
+        return
+    }
+
+    dispatch(getComments(comments))
+
+}
 
 export const createComment = (postId, bodyContent) => async (dispatch) => {
     const response = await fetch("/api/comments/", {
@@ -22,7 +41,7 @@ export const createComment = (postId, bodyContent) => async (dispatch) => {
 };
 
 const initialState = {
-    comment: null
+    comments: null
 }
 
 
@@ -32,6 +51,10 @@ const commentReducer = (state = initialState, action) => {
         case ADD_COMMENT:
             newState = Object.assign({}, state);
             newState.comment[action.payload.id] = action.payload;
+            return newState
+        case GET_COMMENTS:
+            newState = initialState
+            newState.comments = action.payload
             return newState
         default:
             return state
