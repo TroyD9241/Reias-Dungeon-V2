@@ -1,24 +1,29 @@
 from flask import Blueprint, jsonify, redirect, request
 from flask_login import current_user
-from app.models import db, Photo
-from app.forms import PhotoForm
+from app.models import db
 from app.aws import (
      upload_file_to_s3, allowed_file, get_unique_filename
 )
+
+def validation_errors_to_error_messages(validation_errors):
+    """
+    Simple function that turns the WTForms validation errors into a simple list
+    """
+    errorMessages = []
+    for field in validation_errors:
+        for error in validation_errors[field]:
+            errorMessages.append(f"{field} : {error}")
+    return errorMessages
+
 
 photo_routes = Blueprint('photos', __name__)
 
 @photo_routes.route('', methods=["POST"])
 def add_product_photos():
-    """
-    Adds photos for a product we create
-    """
     if "image" not in request.files:
         return {"errors": "image required"}, 400
-
     image = request.files["image"]
 
-    print('image==================',image)
     if not allowed_file(image.filename):
         return {"errors": "file type not permitted"}, 400
 
@@ -33,7 +38,6 @@ def add_product_photos():
         return upload, 400
 
     url = upload["url"]
-
     form = PhotoForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
