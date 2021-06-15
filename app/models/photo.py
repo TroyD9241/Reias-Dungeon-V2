@@ -10,6 +10,7 @@ class Photo(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey(
         'posts.id'), nullable=False)
 
+
     def to_dict(self):
         return {
             "id": self.id,

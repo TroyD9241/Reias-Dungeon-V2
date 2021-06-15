@@ -6,7 +6,7 @@ import "./ImageTile.css";
 const ImageTile = ({ post }) => {
   const history = useHistory();
 
-  const { id, title, number_likes, number_comments, photos, user_id } = post;
+  const { id, title, number_likes, number_comments, media_url, user_id } = post;
 
   if (!post) {
     return null;
@@ -20,7 +20,7 @@ const ImageTile = ({ post }) => {
       <div
         className="tile"
         onClick={handleClick}
-        style={{ backgroundImage: `url(${photos.media_url})` }}
+        style={{ backgroundImage: `url(${media_url})` }}
       >
         <div className="hover-effect">
           <button className="ellipsis">

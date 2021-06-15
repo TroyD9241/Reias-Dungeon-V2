@@ -58,7 +58,7 @@ const DeviationPage = () => {
       <div className="deviation-container">
         <div
           className="deviation-tile"
-          style={{ backgroundImage: `url(${post?.photos.media_url})` }}
+          style={{ backgroundImage: `url(${post?.media_url})` }}
         ></div>
       </div>
 
