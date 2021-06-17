@@ -72,7 +72,7 @@ const DeviationPage = () => {
             <p className="add-to-favs">Add to Favourites</p>
           </div>
           <div className="comments-container">
-            <i class="far fa-comment-alt"></i>
+            <i className="far fa-comment-alt"></i>
             <p className="comment">Comment</p>
           </div>
         </div>
@@ -92,7 +92,7 @@ const DeviationPage = () => {
 
           <div className="collective-comments">
             <p>{post.number_comments}</p>
-            <i class="far fa-comment-alt"></i>
+            <i className="far fa-comment-alt"></i>
           </div>
         </div>
         <div className="post-info">

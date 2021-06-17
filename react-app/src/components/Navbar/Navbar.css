@@ -21,7 +21,7 @@
     display: flex;
     align-content: center;
     height: var(--bannerheight);
-
+    z-index: 1;
 }
 
 .left-side {
@@ -80,7 +80,6 @@
 .navbar-button {
     font-size: 10px;
     background-color: transparent;
-    color: #b1b1b9;
     border: none;
     cursor: pointer;
     height: 30px;
@@ -89,7 +88,10 @@
 
 }
 
-
+.navbar-button > a {
+    color: #01aa75;
+    text-decoration: none;
+}
 .navbar-button:hover {
     color: white;
 
@@ -111,6 +113,7 @@
     margin-right: 2.5%;
     color: #01aa75;
     font-family: 'deviantBold';
+    text-decoration: none;
     font-size: 15px;
     border-left: 2px solid grey;
     outline-offset: 20px;
@@ -133,7 +136,6 @@
     width: 250px;
     justify-content: space-between;
 
-
 }
 
 
@@ -144,7 +146,5 @@
     width: 200px;
     justify-content: space-between;
     padding-right: 2.5%;
-
-
 
 }

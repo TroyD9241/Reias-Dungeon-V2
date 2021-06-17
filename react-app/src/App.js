@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NavBar from "./components/Navbar";
-import ProtectedRoute from "./components/auth/ProtectedRoute";
-import User from "./components/User";
 import LoginModal from "./components/LoginModal";
 import SignupFormModal from "./components/SignupModal";
 import HomePage from "./components/HomePage";
+import ProtectedRoute from './components/auth/ProtectedRoute'
 import DeviationPage from "./components/DeviationPage";
 import DeviationSubmitPage from "./components/DeviationSubmitPage";
 import Search from "./components/Search";
@@ -38,9 +37,9 @@ function App() {
         <Route path="/" exact={true}>
           <HomePage />
         </Route>
-        <Route path="/posts/submit">
+        <ProtectedRoute path="/posts/submit">
           <DeviationSubmitPage />
-        </Route>
+        </ProtectedRoute>
         <Route path="/posts/:postId">
           <DeviationPage />
         </Route>

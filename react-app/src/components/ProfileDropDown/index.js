@@ -1,11 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LogoutButton from "../auth/LogoutButton";
 import "./ProfileDropDown.css";
 
 const ProfileDropDown = ({ profileHover, login, setLogin, signup, setSignup }) => {
-  const history = useHistory();
   const user = useSelector((state) => state.session.user);
 
 
