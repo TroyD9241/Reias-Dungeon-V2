@@ -15,8 +15,6 @@ export const getAllComments = (postId) => async (dispatch) => {
     const response = await fetch(`/api/posts/${postId}/comments`)
 
     const comments = await response.json();
-    console.log(comments);
-
     if (comments.errors) {
         return
     }

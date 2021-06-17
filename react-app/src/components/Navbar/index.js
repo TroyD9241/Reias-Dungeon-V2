@@ -55,7 +55,7 @@ const NavBar = ({ login, setLogin, signup, setSignup }) => {
             id="logout-button"
             onMouseEnter={() => profileHover()}
           >
-            <i className="fas fa-user-alt"></i>
+            <i className="fas fa-user-alt fa-2x"></i>
           </button>
 
           <button className="navbar-button" id="submit-button">

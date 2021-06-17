@@ -5,6 +5,10 @@ const CommentCard = ({ comments }) => {
   return (
     <div className="page">
       <CommentForm />
+
+      <div className='comment-shell'>
+
+      </div>
     </div>
   );
 };
