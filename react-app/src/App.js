@@ -11,6 +11,7 @@ import DeviationPage from "./components/DeviationPage";
 import DeviationSubmitPage from "./components/DeviationSubmitPage";
 import Search from "./components/Search";
 import { authenticate } from "./store/session";
+import UserPage from './components/UserPage'
 
 function App() {
   const dispatch = useDispatch();
@@ -46,9 +47,9 @@ function App() {
         <Route path="/search/:query">
           <Search />
         </Route>
-        <ProtectedRoute path="/users/:userId" exact={true}>
-          <User />
-        </ProtectedRoute>
+        <Route path="/users/:userId" exact={true}>
+          <UserPage />
+        </Route>
       </Switch>
     </BrowserRouter>
   );
