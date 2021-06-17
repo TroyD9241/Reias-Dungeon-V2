@@ -12,8 +12,7 @@ const DeviationForm = () => {
 
 
   const updateImage = (e) => {
-    const file = e.target.files[0];
-    if (file) setImage(file)
+    setImage(e.target.value)
   }
 
   const updateTitle = (e) => {
@@ -57,7 +56,7 @@ const DeviationForm = () => {
         <div>
           <label>{`Photo Url `}</label>
           <input
-            type="file"
+            type="text"
             onChange={updateImage}
           ></input>
         </div>

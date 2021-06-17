@@ -108,16 +108,11 @@ export const getSinglePost = (postId) => async (dispatch) => {
   dispatch(getOnePost(postData.post));
 };
 
-export const createPost = (postId, image, title, bodyContent) => async (dispatch) => {
-  const formData = new FormData();
-  formData.append("image", image)
-  formData.append("post_id", postId)
-  formData.append("title", title)
-  formData.append("bodyContent", bodyContent)
-
-
+export const createPost = (image, title, bodyContent) => async (dispatch) => {
   const response = await fetch("/api/posts/", {
     method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ image, bodyContent, title }),
   });
 
 
@@ -129,7 +124,6 @@ export const createPost = (postId, image, title, bodyContent) => async (dispatch
   }
   return { error: "something went wrong" };
 };
-
 
 const initialState = {
   allPosts: null,
