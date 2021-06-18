@@ -4,14 +4,11 @@ label {
 }
 input[type="text"] {
   padding: 8px;
-  border: none;
   margin: 8px;
 }
 
 input[type="text"]:focus {
   padding: 8px;
-  border: none;
-  background-color: rgb(241, 241, 241);
   outline: none;
 }
 

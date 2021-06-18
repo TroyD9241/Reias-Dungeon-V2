@@ -65,6 +65,25 @@
     align-items: center;
 }
 
+#search-button {
+
+    width: 300px;
+    font-size: 13px;
+    font-family: 'deviantReg';
+    display: flex;
+    color: #b1b1b9;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-button:hover {
+    color: #e4e5e5;
+}
+
+.search-text {
+    font-size: 14px;
+    margin-left: 10px;
+}
 
 .banner-posts {
     display: flex;
@@ -133,8 +152,7 @@
     display:flex;
     height: 100%;
     align-items: center;
-    width: 250px;
-    justify-content: space-between;
+    width: 500px;
 
 }
 

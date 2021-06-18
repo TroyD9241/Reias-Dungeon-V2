@@ -39,7 +39,7 @@ const LoginModal = ({ login, setLogin }) => {
           <div className="modal-form-header">
             Log In <div className="modal-form-header-subtext">Become a deviant.</div>
           </div>
-          <LoginForm />
+          <LoginForm setLogin={setLogin} />
           <div className="modal-tos">
             By clicking Log In, I confirm that I have read and agree to the DeviantArt
             Terms of Service, Privacy Policy, and to receive emails and updates.

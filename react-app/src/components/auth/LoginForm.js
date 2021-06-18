@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../store/session";
 
-const LoginForm = () => {
+const LoginForm = ({ setLogin }) => {
   const dispatch = useDispatch();
-  // const user = useSelector(state => state.session.user);
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,6 +13,8 @@ const LoginForm = () => {
     const data = await dispatch(login(email, password));
     if (data.errors) {
       setErrors(data.errors);
+    } else {
+      setLogin(false)
     }
   };
 
@@ -25,6 +26,8 @@ const LoginForm = () => {
 
     if (data.errors) {
       return null
+    } else {
+      setLogin(false)
     }
   }
 
