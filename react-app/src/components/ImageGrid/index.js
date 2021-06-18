@@ -20,10 +20,12 @@ const ImageGrid = () => {
   }
   return (
     <>
-      <div className="grid">
-        {Object.values(posts)?.map((post, i) => {
-          return <ImageTile key={i} post={post} />;
-        })}
+      <div className='outer-grid'>
+        <div className="grid">
+          {Object.values(posts)?.map((post, i) => {
+            return <ImageTile key={i} post={post} />;
+          })}
+        </div>
       </div>
     </>
   );

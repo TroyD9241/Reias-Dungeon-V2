@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NavBar from "./components/Navbar";
 import LoginModal from "./components/LoginModal";
 import SignupFormModal from "./components/SignupModal";
+import SearchModal from "./components/SearchModal";
 import HomePage from "./components/HomePage";
 import ProtectedRoute from './components/auth/ProtectedRoute'
 import DeviationPage from "./components/DeviationPage";
@@ -17,6 +18,7 @@ function App() {
   const [loaded, setLoaded] = useState(false);
   const [login, setLogin] = useState(false);
   const [signup, setSignup] = useState(false);
+  const [search, setSearch] = useState(false)
 
   useEffect(() => {
     (async () => {
@@ -30,9 +32,10 @@ function App() {
   }
   return (
     <BrowserRouter>
-      <NavBar login={login} setLogin={setLogin} signup={signup} setSignup={setSignup} />
+      <NavBar login={login} setLogin={setLogin} signup={signup} setSignup={setSignup} setSearch={setSearch} />
       <LoginModal login={login} setLogin={setLogin} />
       <SignupFormModal signup={signup} setSignup={setSignup} />
+      <SearchModal search={search} setSearch={setSearch} />
       <Switch>
         <Route path="/" exact={true}>
           <HomePage />
@@ -50,7 +53,7 @@ function App() {
           <UserPage />
         </Route>
       </Switch>
-    </BrowserRouter>
+    </BrowserRouter >
   );
 }
 

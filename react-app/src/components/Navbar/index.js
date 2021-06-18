@@ -4,9 +4,9 @@ import { Link, useHistory } from "react-router-dom";
 import src from "../../images/maxresdefault.jpg";
 import ProfileDropDown from "../ProfileDropDown";
 
-const NavBar = ({ login, setLogin, signup, setSignup }) => {
+const NavBar = ({ login, setLogin, signup, setSignup, setSearch }) => {
   const history = useHistory();
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
 
   let profileHover = () => {
     if (document.querySelector(".dropdown-shell").classList.contains("hidden")) {
@@ -16,11 +16,11 @@ const NavBar = ({ login, setLogin, signup, setSignup }) => {
     }
   };
 
-  const handleSearch = async (e) => {
-    e.preventDefault();
-    history.push(`/search/${search}`);
-    setSearch("");
-  };
+  // const handleSearch = async (e) => {
+  //   e.preventDefault();
+  //   history.push(`/search/${search}`);
+  //   setSearch("");
+  // };
 
   return (
     <>
@@ -39,14 +39,20 @@ const NavBar = ({ login, setLogin, signup, setSignup }) => {
               <img className="logo-image" src={src} alt="logo"></img>
             </Link>
           </button>
-
+          {/*
           <form className="navbar-button" onSubmit={handleSearch}>
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
-          </form>
+          </form> */}
+          <button onClick={() => setSearch(true)} className='navbar-button' id='search-button'>
+            <i className="fas fa-search"></i>
+            <div className='search-text'>
+              SEARCH AND DISCOVER
+            </div>
+          </button>
         </div>
 
         <div className="navbar-right">

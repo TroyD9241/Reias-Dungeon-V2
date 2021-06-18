@@ -38,7 +38,7 @@ const SignupFormModal = ({ signup, setSignup }) => {
           Join DeviantArt{" "}
           <div className="modal-form-header-subtext">Already a deviant?</div>
         </div>
-        <SignupForm />
+        <SignupForm setSignup={setSignup} />
         <div className="modal-tos">
           By clicking Log In, I confirm that I have read and agree to the DeviantArt Terms
           of Service, Privacy Policy, and to receive emails and updates.
