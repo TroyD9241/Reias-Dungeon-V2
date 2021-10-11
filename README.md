@@ -32,13 +32,13 @@ Postgres utilizes a relational database, which allows for increased data accurac
 
 ## Frontend Overview
 ----------------------
-Bazaar also features a robust front end powered by React and Redux. Below are the Technologies and Libraries used.
+RD also features a robust front end powered by React and Redux. Below are the Technologies and Libraries used.
 
 ### **Frontend Technologies Used**
 
 **React**
 
-The core of the frontend is the popular framework React. RD Forgoes many of the react-libraries available in favor of raw design and engineering. Which helped me continue to cement my understanding of react and the logic involved in many of these popular libraries available to us. Bazaar includes a lot of different components that were designed for modularity, reusability, and testability.
+The core of the frontend is the popular framework React. RD Forgoes many of the react-libraries available in favor of raw design and engineering. Which helped me continue to cement my understanding of react and the logic involved in many of these popular libraries available to us. RD includes a lot of different components that were designed for modularity, reusability, and testability.
 
 **Redux**
 
@@ -47,4 +47,4 @@ All of the data received from the backend is stored in the store creating a slig
 
 ## Final Thoughts
 -------
-RD originally was a different project, but due to a multitude of personal reasons I struggled to find the desire to work on a site from scratch. So to compensate I attempted to find a site that was feature heavy and really gave me the spark of motivation I needed. Deviant features a truly interesting UI that I enjoyed emulating. The core of this app was developed in a few days, and polished over the last two weeks. I'd like to continue to work on this project in the future and continue to play with the interesting features that Deviantart boasts. Thanks for reading! I hope you enjoyed looking at this project, and I hope you wouldnt mind connecting with me on [Linkedin](https://www.linkedin.com/in/troyd41/).😁
+RD originally was a different project, but due to a multitude of personal reasons I struggled to find the desire to work on a site from scratch. So to compensate I attempted to find a site that was feature heavy and really gave me the spark of motivation I needed. Deviantart features a truly interesting UI that I enjoyed emulating. The core of this app was developed in a few days, and polished over the last two weeks. I'd like to continue to work on this project in the future and continue to play with the interesting features that Deviantart boasts. Thanks for reading! I hope you enjoyed looking at this project, and I hope you wouldnt mind connecting with me on [Linkedin](https://www.linkedin.com/in/troyd41/).😁
